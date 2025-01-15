@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./musicify-backend
+    ports:
+      - "0:4000"  
+    environment:
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}  
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}  
+      CLOUDINARY_SECRET_KEY: ${CLOUDINARY_SECRET_KEY}  
+      MONGODB_URI: mongodb://mongo:27017/musicify
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./musicify
+    ports:
+      - "3000:80"  
+
+  admin:
+    build:
+      context: ./admin
+    ports:
+      - "5001:80"  
+
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # Default MongoDB port
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
