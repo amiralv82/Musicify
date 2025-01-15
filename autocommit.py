@@ -2,7 +2,7 @@ import os
 import time
 
 # Path to your Git repository
-REPO_PATH = "/Users/amir/Desktop/Final-Project"
+REPO_PATH = "/Users/amir/Desktop/Final-Project/musicify full stack"
 
 # Commit message template
 COMMIT_MESSAGE = "Commit number {}"
