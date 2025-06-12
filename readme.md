@@ -9,6 +9,7 @@ Musicify is a full-stack application for managing and streaming music albums and
 
 ## 🏗 Project Structure
 
+
 root/
 ├── admin/                # Admin interface
 │   ├── src/components/   # Reusable components (NavBar, SideBar)
@@ -25,6 +26,7 @@ root/
 │   ├── src/config/       # Cloudinary and MongoDB configuration
 │   └── Dockerfile        # Dockerfile for containerization
 └── docker-compose.yml    # For orchestrating multiple containers
+
 
 ---
 
